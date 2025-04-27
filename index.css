@@ -41,6 +41,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 24px;
+  font-size: 24px;
 }
 button:hover,
 button:active,
@@ -53,5 +54,5 @@ img {
   height: 400px;
 }
 .cardName {
-  font-size: 16px;
+  font-size: 18px;
 }

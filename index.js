@@ -35,7 +35,6 @@ const characters = [
 
 const opponentImage = document.getElementById("opponentImage");
 const opponentName = document.getElementById("opponentName");
-
 const characterList = document.getElementById("characterList");
 
 function randomizeOpponent() {
@@ -43,8 +42,6 @@ function randomizeOpponent() {
   opponentImage.src = characters[index].url;
   opponentName.textContent = characters[index].name;
 }
-
-newGame();
 
 function newGame() {
   randomizeOpponent();
@@ -58,30 +55,16 @@ function drawCharacterList() {
         <div class="card">
             <img class="cardImage" src="${characters[i].url}" alt="" />
             <p class="cardName">${characters[i].name}</p>
-        </div>
-        
+        </div>        
         `;
   }
   characterList.innerHTML = characterString;
   const cards = document.querySelectorAll(".cardImage");
-  console.log(cards);
-
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", function (element) {
-      if (!element.target.eliminated) {
-        console.log("nnoooo");
-        element.target.src = "eliminated.jpg";
-        cards[i].eliminated = true;
-      } else {
-        console.log(
-          "Trying to set src to ",
-          characters[element.target.index].url
-        );
-        element.target.src = characters[element.target.index].url;
-        cards[i].eliminated = false;
-      }
+      element.target.classList.toggle("eliminated");
     });
-    cards[i].index = i;
-    cards[i].eliminated = false;
   }
 }
+
+newGame();

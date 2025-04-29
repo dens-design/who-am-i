@@ -33,14 +33,37 @@ const characters = [
   { url: "/images/celebrities/Zendaya.jpg", name: "Zendaya" },
 ];
 
+const food = [
+  { url: "/images/food/Apfel.jpg", name: "Apfel" },
+  { url: "/images/food/Banane.jpg", name: "Banane" },
+  { url: "/images/food/Brokkoli.jpg", name: "Brokkoli" },
+  { url: "/images/food/Zitrone.jpg", name: "Zitrone" },
+  { url: "/images/food/Möhre.webp", name: "Möhre" },
+  { url: "/images/food/Tomate.jpg", name: "Tomate" },
+  { url: "/images/food/Zucchini.jpg", name: "Zucchini" },
+  { url: "/images/food/Ananas.jpg", name: "Ananas" },
+  { url: "/images/food/Kartoffel.webp", name: "Kartoffel" },
+  { url: "/images/food/Orange.webp", name: "Orange" },
+  { url: "/images/food/Knoblauch.png", name: "Knoblauch" },
+  { url: "/images/food/Bohne.jpg", name: "Bohne" },
+  { url: "/images/food/Avocado.jpg", name: "Avocado" },
+  { url: "/images/food/Mango.jpeg", name: "Mango" },
+  { url: "/images/food/Paprika.jpg", name: "Paprika" },
+  { url: "/images/food/Blumenkohl.jpg", name: "Blumenkohl" },
+  { url: "/images/food/Erdbeeren.webp", name: "Erdbeeren" },
+  { url: "/images/food/Pfirsich.jpeg", name: "Pfirsich" },
+  { url: "/images/food/Weintraube.jpg", name: "Weintraube" },
+  { url: "/images/food/Kürbis.webp", name: "Kürbis" },
+];
+
 const opponentImage = document.getElementById("opponentImage");
 const opponentName = document.getElementById("opponentName");
 const characterList = document.getElementById("characterList");
 
 function randomizeOpponent() {
-  const index = Math.floor(Math.random() * characters.length);
-  opponentImage.src = characters[index].url;
-  opponentName.textContent = characters[index].name;
+  const index = Math.floor(Math.random() * food.length);
+  opponentImage.src = food[index].url;
+  opponentName.textContent = food[index].name;
 }
 
 function newGame() {
@@ -50,11 +73,11 @@ function newGame() {
 
 function drawCharacterList() {
   let characterString = "";
-  for (let i = 0; i < characters.length; i++) {
+  for (let i = 0; i < food.length; i++) {
     characterString += `
         <div class="card">
-            <img class="cardImage" src="${characters[i].url}" alt="" />
-            <p class="cardName">${characters[i].name}</p>
+            <img class="cardImage" src="${food[i].url}" alt="" />
+            <p class="cardName">${food[i].name}</p>
         </div>        
         `;
   }

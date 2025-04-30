@@ -1,9 +1,4 @@
-import { celebrities, food } from "./data.js";
-
-const categories = [
-  { name: "Schauspieler/Sänger", array: celebrities },
-  { name: "Obst/Gemüse", array: food },
-];
+import { categories } from "./data.js";
 
 const opponentImage = document.getElementById("opponent-image");
 const opponentName = document.getElementById("opponentName");

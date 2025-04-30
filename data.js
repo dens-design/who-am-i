@@ -1,4 +1,4 @@
-export const celebrities = [
+const celebrities = [
   { url: "/images/celebrities/Angelina_Jolie.jpg", name: "Angelina Jolie" },
   { url: "/images/celebrities/Blake_Lively.webp", name: "Blake Lively" },
   { url: "/images/celebrities/Brad_Pitt.webp", name: "Brad Pitt" },
@@ -33,7 +33,7 @@ export const celebrities = [
   { url: "/images/celebrities/Zendaya.jpg", name: "Zendaya" },
 ];
 
-export const food = [
+const food = [
   { url: "/images/food/Apfel.jpg", name: "Apfel" },
   { url: "/images/food/Banane.jpg", name: "Banane" },
   { url: "/images/food/Brokkoli.jpg", name: "Brokkoli" },
@@ -54,4 +54,9 @@ export const food = [
   { url: "/images/food/Pfirsich.jpeg", name: "Pfirsich" },
   { url: "/images/food/Weintraube.jpg", name: "Weintraube" },
   { url: "/images/food/Kürbis.webp", name: "Kürbis" },
+];
+
+export const categories = [
+  { name: "Schauspieler/Sänger", array: celebrities },
+  { name: "Obst/Gemüse", array: food },
 ];

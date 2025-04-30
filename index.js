@@ -57,8 +57,8 @@ const food = [
 ];
 
 const categories = [
-  { name: "Celebrities", array: celebrities },
-  { name: "Food", array: food },
+  { name: "Schauspieler/Sänger", array: celebrities },
+  { name: "Obst/Gemüse", array: food },
 ];
 
 const opponentImage = document.getElementById("opponent-image");

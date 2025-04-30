@@ -4,15 +4,31 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>WHO AM I</h1>
     <main id="main">
-      <button onclick="newGame()">NEUES SPIEL</button>
-
-      <div class="opponentContainer">
-        <img id="opponentImage" src="" alt="" />
-        <p id="opponentName"></p>
+      <div class="opponent-container card">
+        <div class="opponent-text-container half-column">
+          <h2>Kategorie wählen:</h2>
+          <select id="category-dropdown"></select>
+          <h2>Dein Gegner:</h2>
+          <p>
+            Dein Gegner muss diese Person erraten. Stellt euch abwechselnd
+            fragen und antwortet jeweils nur mit ja/nein.
+          </p>
+          <button onclick="newGame()">NEUES SPIEL</button>
+        </div>
+        <div class="opponent-image-container half-column">
+          <img id="opponent-image" src="" alt="" />
+          <p id="opponentName"></p>
+        </div>
       </div>
-      <div id="characterList"></div>
+      <div class="card">
+        <h2>Rate, welche/s du bist:</h2>
+        <p>
+          Tippe auf einen Eintrag, um ihn als eliminiert zu markieren. Wer
+          zuerst errät, wer er ist, gewinnt die Runde!
+        </p>
+        <div id="characterList"></div>
+      </div>
     </main>
 
     <script src="index.js"></script>

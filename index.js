@@ -1,4 +1,4 @@
-const characters = [
+const celebrities = [
   { url: "/images/celebrities/Angelina_Jolie.jpg", name: "Angelina Jolie" },
   { url: "/images/celebrities/Blake_Lively.webp", name: "Blake Lively" },
   { url: "/images/celebrities/Brad_Pitt.webp", name: "Brad Pitt" },
@@ -56,14 +56,21 @@ const food = [
   { url: "/images/food/Kürbis.webp", name: "Kürbis" },
 ];
 
-const opponentImage = document.getElementById("opponentImage");
+const categories = [
+  { name: "Celebrities", array: celebrities },
+  { name: "Food", array: food },
+];
+
+const opponentImage = document.getElementById("opponent-image");
 const opponentName = document.getElementById("opponentName");
 const characterList = document.getElementById("characterList");
+const categoryDropdown = document.getElementById("category-dropdown");
+let chosenCategory = categories[0].array;
 
 function randomizeOpponent() {
-  const index = Math.floor(Math.random() * food.length);
-  opponentImage.src = food[index].url;
-  opponentName.textContent = food[index].name;
+  const index = Math.floor(Math.random() * chosenCategory.length);
+  opponentImage.src = chosenCategory[index].url;
+  opponentName.textContent = chosenCategory[index].name;
 }
 
 function newGame() {
@@ -73,21 +80,52 @@ function newGame() {
 
 function drawCharacterList() {
   let characterString = "";
-  for (let i = 0; i < food.length; i++) {
+  for (let i = 0; i < chosenCategory.length; i++) {
     characterString += `
-        <div class="card">
-            <img class="cardImage" src="${food[i].url}" alt="" />
-            <p class="cardName">${food[i].name}</p>
+        <div class="guess-card">
+            <img class="cardImage" src="${chosenCategory[i].url}" alt="" />
+            <p class="cardName">${chosenCategory[i].name}</p>
         </div>        
         `;
   }
   characterList.innerHTML = characterString;
-  const cards = document.querySelectorAll(".cardImage");
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", function (element) {
-      element.target.classList.toggle("eliminated");
-    });
-  }
+  // const cards = document.querySelectorAll(".cardImage");
+  // for (let i = 0; i < cards.length; i++) {
+  //   cards[i].addEventListener("click", function (element) {
+  //     element.target.classList.toggle("eliminated");
+  //   });
+  // }
 }
 
+characterList.addEventListener("click", function (e) {
+  console.log(e.target.classList);
+  if (
+    e.target.classList.contains("cardName") ||
+    e.target.classList.contains("cardImage")
+  ) {
+    e.target.parentElement.classList.toggle("eliminated");
+  } else if (e.target.classList.contains("guess-card")) {
+    e.target.classList.toggle("eliminated");
+  }
+});
+
+drawCategorieDropdown();
 newGame();
+
+function drawCategorieDropdown() {
+  let html = "";
+  for (category of categories) {
+    html += `<option>${category.name}</option>`;
+  }
+  console.log(html);
+  categoryDropdown.innerHTML = html;
+}
+
+categoryDropdown.addEventListener("change", function () {
+  for (category of categories) {
+    if (category.name === document.querySelector("option:checked").value) {
+      chosenCategory = category.array;
+    }
+  }
+  newGame();
+});

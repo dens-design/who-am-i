@@ -26,6 +26,7 @@ main {
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgb(211, 210, 210);
 }
 .half-column {
   width: 50%;
@@ -90,6 +91,8 @@ button:focus {
   justify-content: end;
 
   cursor: pointer;
+
+  border: 1px solid rgb(211, 210, 210);
 }
 
 .cardName {
@@ -108,9 +111,8 @@ button:focus {
 select {
   width: 100%;
   padding: 8px 16px;
-  background-color: #fff28e;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: none;
+  background-color: #ffffff;
+  border: 1px solid rgb(211, 210, 210);
   border-radius: 4px;
   font-family: "Inter", sans-serif;
   font-weight: 600;

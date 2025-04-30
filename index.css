@@ -94,6 +94,8 @@ button:focus {
 
 .cardName {
   font-size: 18px;
+  text-align: center;
+  font-weight: 500;
 }
 .cardImage {
   max-width: 100%;
